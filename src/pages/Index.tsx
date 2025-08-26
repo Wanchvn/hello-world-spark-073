@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import CategoryGrid from "@/components/CategoryGrid";
 import QuickActions from "@/components/QuickActions";
 import FeaturedListings from "@/components/FeaturedListings";
+import ApiDemo from "@/components/ApiDemo";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <QuickActions />
       <CategoryGrid />
       <FeaturedListings />
+      <ApiDemo />
     </div>
   );
 };
