@@ -32,9 +32,36 @@ A full-stack application demonstrating React frontend connected to Express.js ba
 - Node.js 18+ 
 - npm or yarn
 - Git
-- Docker (optional)
+- Docker (optional, but recommended for easiest setup)
 
-### Local Development
+### 🐳 **Option 1: Docker (Recommended - 2 minutes)**
+
+**Windows Users:**
+```bash
+# Double-click this file for instant setup:
+start-local.bat
+
+# Or run in Command Prompt:
+start-local.bat
+```
+
+**PowerShell Users:**
+```powershell
+# Right-click and "Run with PowerShell":
+.\start-local.ps1
+```
+
+**Manual Docker:**
+```bash
+docker-compose -f docker-compose.local.yml up --build -d
+```
+
+**Access your application:**
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000/api
+- Health Check: http://localhost:5000/api/health
+
+### 📦 **Option 2: Traditional Setup**
 
 1. **Clone the repository**
 ```bash
@@ -67,6 +94,12 @@ npm run dev
 - Frontend: http://localhost:5173
 - Backend: http://localhost:5000
 - API Demo: http://localhost:5173 (scroll down)
+
+### 🧪 **Test Everything Works**
+```bash
+# Test all endpoints (after starting with Docker):
+test-local.bat
+```
 
 ## 🐳 Docker Deployment
 
@@ -103,6 +136,24 @@ npm install -g vercel
 vercel
 ```
 
+## 📚 **Documentation & Guides**
+
+### 🚀 **Local Development**
+- **[Quick Start](README_LOCAL.md)** - Get running in 2 minutes
+- **[Full Guide](LOCAL_DEVELOPMENT.md)** - Complete local development setup
+- **[Docker Setup](DOCKER_SETUP.md)** - Install Docker on Windows
+
+### 🚀 **Production Deployment**
+- **[Quick Start](QUICK_START.md)** - Deploy to production in 30 minutes
+- **[Full Setup](PRODUCTION_SETUP.md)** - Complete production deployment guide
+- **[Deployment Guide](DEPLOYMENT.md)** - All deployment options explained
+
+### 🐳 **Docker & Infrastructure**
+- **Local:** `docker-compose.local.yml` - Development environment
+- **Production:** `docker-compose.prod.yml` - Production environment
+- **Nginx:** `nginx.prod.conf` - Production web server configuration
+- **Scripts:** `start-local.bat`, `deploy-prod.sh` - Automation scripts
+
 ## 🔄 Automated Deployment
 
 This repository includes GitHub Actions for automatic deployment:
@@ -136,11 +187,19 @@ This repository includes GitHub Actions for automatic deployment:
 │   ├── lib/                   # Utilities & API
 │   └── pages/                 # Page components
 ├── Dockerfile                  # Frontend container
-├── docker-compose.yml          # Local development
-├── nginx.conf                  # Production web server
+├── docker-compose.yml          # Development setup
+├── docker-compose.local.yml    # Local development
+├── docker-compose.prod.yml     # Production setup
+├── nginx.conf                  # Development web server
+├── nginx.prod.conf             # Production web server
 ├── vercel.json                 # Vercel configuration
 ├── railway.json                # Railway configuration
-└── deploy-*.sh/bat            # Deployment scripts
+├── start-local.bat             # Windows startup script
+├── start-local.ps1             # PowerShell startup script
+├── test-local.bat              # Local testing script
+├── deploy-prod.sh              # Production deployment script
+├── deploy-prod.bat             # Windows deployment script
+└── env.example                 # Environment variables template
 ```
 
 ## 🔌 API Endpoints
